@@ -53,7 +53,7 @@ Here are some ideas to get you started:
   <a href="https://www.linkedin.com/in/lucaswrocha/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
   
  ##
-  <h2>Temos Sistemas Prontos!</h2>
+  <h2>Desenvolvendo sistemas!</h2>
   <p>*Sistema para oficina mecânica</p>
   <p>*Sistema controle de estoque e vendas</p>
   <p>*Sistema para assistência tecnica em eletrônicos</p>
