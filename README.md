@@ -60,7 +60,7 @@ Here are some ideas to get you started:
   <p>*Fazemos modificações no Sistema MapOS como assinatura digital para clientes e técnicos</p>
   
   
- ![Snake animation](https://github.com/visaotec/visaotec/blob/output/github-contribution-grid-snake.svg) 
+ ![Snake animation](https://github.com/visaotec/lrochawl/blob/output/github-contribution-grid-snake.svg) 
   
 </div>
 
