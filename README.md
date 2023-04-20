@@ -5,57 +5,66 @@
 
 Here are some ideas to get you started:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+    - 🔭 I’m currently working on ...
+    - 🌱 I’m currently learning ...
+    - 👯 I’m looking to collaborate on ...
+    - 🤔 I’m looking for help with ...
+    - 💬 Ask me about ...
+    - 📫 How to reach me: ...
+    - 😄 Pronouns: ...
+    - ⚡ Fun fact: ...
+    -->
 
 
-# Objetivo: Compartilhar ideias e projetos no universo dos códigos
-# Autor: Lucas Rocha
-# Data: 19/04/2023
+    # Objetivo: Compartilhar ideias e projetos no universo dos códigos
+    # Autor: Lucas Rocha
+    # Data: 19/04/2023
+    
+    - 🔭 I’m currently working on ...
+    - 🌱 I’m currently learning ...
+    - 👯 I’m looking to collaborate on ...
+    - 🤔 I’m looking for help with ...
+    - 💬 Ask me about ...
+    - 📫 How to reach me: ...
+    - 😄 Pronouns: ...
+    - ⚡ Fun fact: .
 
 # Instruções do jogo
-print("Bem-vindo ao jogo Compartilhando Ideias e Projetos!")
-print("Seu objetivo é ajudar o programador a compartilhar suas ideias e projetos com outros desenvolvedores.")
-print("Cada desafio concluído vai aumentar sua pontuação e te aproximar do objetivo final!")
-print("Boa sorte!")
+    print("Bem-vindo ao jogo Compartilhando Ideias e Projetos!")
+    print("Seu objetivo é ajudar o programador a compartilhar suas ideias e projetos com outros desenvolvedores.")
+    print("Cada desafio concluído vai aumentar sua pontuação e te aproximar do objetivo final!")
+    print("Boa sorte!")
 
 # Variáveis
-pontuacao = 0
-ideias_compartilhadas = 0
-projetos_colaborativos = 0
-pessoas_ajudadas = 0
+    pontuacao = 0
+    ideias_compartilhadas = 0
+    projetos_colaborativos = 0
+    pessoas_ajudadas = 0
 
 # Desafios
-while pontuacao < 10:
-    escolha = input("Escolha um desafio: (1) Compartilhar ideias, (2) Projetos colaborativos, (3) Ajudar pessoas. ")
-    
-    if escolha == "1":
-        ideias_compartilhadas += 1
-        pontuacao += 1
-        print("Parabéns! Você compartilhou mais uma ideia.")
-    elif escolha == "2":
-        projetos_colaborativos += 1
-        pontuacao += 2
-        print("Ótimo trabalho! O projeto colaborativo está em andamento.")
-    elif escolha == "3":
-        pessoas_ajudadas += 1
-        pontuacao += 3
-        print("Incrível! Você ajudou uma pessoa com seu conhecimento.")
-    else:
-        print("Opção inválida. Tente novamente.")
+    while pontuacao < 10:
+        escolha = input("Escolha um desafio: (1) Compartilhar ideias, (2) Projetos colaborativos, (3) Ajudar pessoas. ")
+
+        if escolha == "1":
+            ideias_compartilhadas += 1
+            pontuacao += 1
+            print("Parabéns! Você compartilhou mais uma ideia.")
+        elif escolha == "2":
+            projetos_colaborativos += 1
+            pontuacao += 2
+            print("Ótimo trabalho! O projeto colaborativo está em andamento.")
+        elif escolha == "3":
+            pessoas_ajudadas += 1
+            pontuacao += 3
+            print("Incrível! Você ajudou uma pessoa com seu conhecimento.")
+        else:
+            print("Opção inválida. Tente novamente.")
     
 # Mensagem final
-print(f"Parabéns, você concluiu todos os desafios e ajudou o programador a compartilhar suas ideias e projetos!")
-print(f"Total de ideias compartilhadas: {ideias_compartilhadas}")
-print(f"Total de projetos colaborativos: {projetos_colaborativos}")
-print(f"Total de pessoas ajudadas: {pessoas_ajudadas}")
+        print(f"Parabéns, você concluiu todos os desafios e ajudou o programador a compartilhar suas ideias e projetos!")
+        print(f"Total de ideias compartilhadas: {ideias_compartilhadas}")
+        print(f"Total de projetos colaborativos: {projetos_colaborativos}")
+        print(f"Total de pessoas ajudadas: {pessoas_ajudadas}")
 
 
 <div align="center">
