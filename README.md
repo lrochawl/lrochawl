@@ -109,3 +109,5 @@ Here are some ideas to get you started:
   
 </div>
 
+    
+    ![Karanalpe Status](https://github-readme-stats.vercel.app/api?username=lrochawl&show_icons=true)
