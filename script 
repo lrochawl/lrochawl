@@ -1,0 +1,65 @@
+# Script: Manutenção Preventiva para Windows 11
+# Versão: 1.0
+# Autor: [Seu Nome]
+
+# Função: Limpeza de Arquivos Temporários
+function Limpar-ArquivosTemporarios {
+    Write-Host "Limpando arquivos temporários..." -ForegroundColor Green
+    Remove-Item -Path "$env:TEMP\*" -Recurse -Force -ErrorAction SilentlyContinue
+    Write-Host "Arquivos temporários limpos." -ForegroundColor Cyan
+}
+
+# Função: Verificação de Integridade do Disco
+function Verificar-Disco {
+    Write-Host "Verificando a integridade do disco..." -ForegroundColor Green
+    chkdsk C: /scan | Out-Null
+    Write-Host "Verificação de disco concluída." -ForegroundColor Cyan
+}
+
+# Função: Limpeza de Disco (Utilitário do Windows)
+function Limpeza-Disco {
+    Write-Host "Executando limpeza de disco..." -ForegroundColor Green
+    Start-Process -FilePath "cleanmgr.exe" -ArgumentList "/SAGESET:1" -Wait
+    Start-Process -FilePath "cleanmgr.exe" -ArgumentList "/SAGERUN:1" -Wait
+    Write-Host "Limpeza de disco finalizada." -ForegroundColor Cyan
+}
+
+# Função: Atualização do Sistema
+function Atualizar-Sistema {
+    Write-Host "Verificando por atualizações do Windows..." -ForegroundColor Green
+    Install-Module PSWindowsUpdate -Force -ErrorAction SilentlyContinue
+    Import-Module PSWindowsUpdate
+    Get-WindowsUpdate -AcceptAll -Install -AutoReboot
+    Write-Host "Atualizações instaladas." -ForegroundColor Cyan
+}
+
+# Função: Reinício de Serviços Essenciais
+function Reiniciar-Servicos {
+    Write-Host "Reiniciando serviços essenciais..." -ForegroundColor Green
+    Restart-Service -Name "wuauserv" -ErrorAction SilentlyContinue
+    Restart-Service -Name "BITS" -ErrorAction SilentlyContinue
+    Write-Host "Serviços reiniciados." -ForegroundColor Cyan
+}
+
+# Função: Criação de Ponto de Restauração
+function Criar-PontoRestauração {
+    Write-Host "Criando ponto de restauração do sistema..." -ForegroundColor Green
+    Enable-ComputerRestore -Drive "C:\"
+    Checkpoint-Computer -Description "Manutenção Preventiva" -RestorePointType MODIFY_SETTINGS
+    Write-Host "Ponto de restauração criado." -ForegroundColor Cyan
+}
+
+# Função Principal
+function Realizar-Manutencao {
+    Write-Host "Iniciando manutenção preventiva..." -ForegroundColor Yellow
+    Limpar-ArquivosTemporarios
+    Verificar-Disco
+    Limpeza-Disco
+    Atualizar-Sistema
+    Reiniciar-Servicos
+    Criar-PontoRestauração
+    Write-Host "Manutenção preventiva concluída com sucesso!" -ForegroundColor Green
+}
+
+# Execução
+Realizar-Manutencao
