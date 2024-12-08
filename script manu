@@ -1,0 +1,35 @@
+# Script: Correção de Erros no Windows 11
+# Versão: 1.0
+# Autor: [Seu Nome]
+
+# Função: Executar SFC (System File Checker) para verificar e corrigir arquivos de sistema corrompidos
+function Corrigir-ArquivosDeSistema {
+    Write-Host "Executando SFC (System File Checker)..." -ForegroundColor Green
+    sfc /scannow
+    Write-Host "Verificação SFC concluída." -ForegroundColor Cyan
+}
+
+# Função: Verificar e corrigir a imagem do Windows com DISM (Deployment Image Servicing and Management)
+function Corrigir-ImagemWindows {
+    Write-Host "Verificando a integridade da imagem do Windows com DISM..." -ForegroundColor Green
+    DISM /Online /Cleanup-Image /ScanHealth
+    Write-Host "Verificação concluída. Corrigindo problemas, se encontrados..." -ForegroundColor Yellow
+    DISM /Online /Cleanup-Image /RestoreHealth
+    Write-Host "Correção da imagem do Windows concluída." -ForegroundColor Cyan
+}
+
+# Função: Verificar e corrigir erros de disco com CHKDSK
+function Corrigir-ErrosDeDisco {
+    Write-Host "Verificando e corrigindo erros de disco..." -ForegroundColor Green
+    chkdsk C: /F /R /X
+    Write-Host "Verificação e correção de erros de disco concluída. Reinicie o sistema se necessário." -ForegroundColor Cyan
+}
+
+# Função: Reiniciar Componentes de Atualização do Windows
+function Reiniciar-AtualizacaoWindows {
+    Write-Host "Reiniciando componentes de atualização do Windows..." -ForegroundColor Green
+    net stop wuauserv
+    net stop cryptSvc
+    net stop bits
+    net stop msiserver
+    Remove-Item -Path "C:\Windows\Software
