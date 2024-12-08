@@ -1,0 +1,10 @@
+No C:\Users\Leon Mattei\Documents\limpeza.ps1:35 caractere:23
++     Remove-Item -Path "C:\Windows\Software
++                       ~~~~~~~~~~~~~~~~~~~~
+A cadeia de caracteres não tem o terminador: ".
+No C:\Users\Leon Mattei\Documents\limpeza.ps1:29 caractere:39
++ function Reiniciar-AtualizacaoWindows {
++                                       ~
+'}' de fechamento ausente no bloco de instrução ou na definição de tipo.
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : TerminatorExpectedAtEndOfString
