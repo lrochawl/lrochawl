@@ -2,14 +2,14 @@
 # Versão: 1.0
 # Autor: [Seu Nome]
 
-# Função: Executar SFC (System File Checker) para verificar e corrigir arquivos de sistema corrompidos
+# Função: Executar SFC (System File Checker)
 function Corrigir-ArquivosDeSistema {
     Write-Host "Executando SFC (System File Checker)..." -ForegroundColor Green
     sfc /scannow
     Write-Host "Verificação SFC concluída." -ForegroundColor Cyan
 }
 
-# Função: Verificar e corrigir a imagem do Windows com DISM (Deployment Image Servicing and Management)
+# Função: Verificar e corrigir a imagem do Windows com DISM
 function Corrigir-ImagemWindows {
     Write-Host "Verificando a integridade da imagem do Windows com DISM..." -ForegroundColor Green
     DISM /Online /Cleanup-Image /ScanHealth
@@ -32,4 +32,34 @@ function Reiniciar-AtualizacaoWindows {
     net stop cryptSvc
     net stop bits
     net stop msiserver
-    Remove-Item -Path "C:\Windows\Software
+    Remove-Item -Path "C:\Windows\SoftwareDistribution" -Recurse -Force -ErrorAction SilentlyContinue
+    Remove-Item -Path "C:\Windows\System32\catroot2" -Recurse -Force -ErrorAction SilentlyContinue
+    net start wuauserv
+    net start cryptSvc
+    net start bits
+    net start msiserver
+    Write-Host "Componentes de atualização reiniciados." -ForegroundColor Cyan
+}
+
+# Função: Corrigir Erros Comuns de Rede
+function Corrigir-ErrosRede {
+    Write-Host "Corrigindo erros de rede..." -ForegroundColor Green
+    netsh int ip reset
+    netsh winsock reset
+    Write-Host "Redefinição de configurações de rede concluída. Reinicie o computador para aplicar as mudanças." -ForegroundColor Cyan
+}
+
+# Função Principal
+function Corrigir-Erros {
+    Write-Host "Iniciando correção de erros no sistema..." -ForegroundColor Yellow
+    Corrigir-ArquivosDeSistema
+    Corrigir-ImagemWindows
+    Corrigir-ErrosDeDisco
+    Reiniciar-AtualizacaoWindows
+    Corrigir-ErrosRede
+    Write-Host "Correção de erros concluída!" -ForegroundColor Green
+    Write-Host "Reinicie o computador para aplicar todas as mudanças, se necessário." -ForegroundColor Yellow
+}
+
+# Execução
+Corrigir-Erros
